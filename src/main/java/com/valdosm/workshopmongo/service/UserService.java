@@ -23,7 +23,7 @@ public class UserService {
     }
     public Page<User> findPage(Integer page, Integer  linesPerPage, String orderBy, String direction){
         PageRequest pageRequest = PageRequest.of(page, linesPerPage, Direction.valueOf(direction), orderBy);
-        return repository.findAll(null, pageRequest);
+        return repository.findAll( pageRequest);
     }
      public User findById(String id){
         Optional<User> obj = repository.findById(id);
